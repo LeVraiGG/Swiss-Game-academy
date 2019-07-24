@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerController : MonoBehaviour
-{
+public class PlayerController : MonoBehaviour {
     private Rigidbody2D rigidBody2D;
     public float playerVelocity = 10;
     public Transform jumpPosition;
@@ -14,53 +13,43 @@ public class PlayerController : MonoBehaviour
 
     public static int nextInt = 2;
     public string nextScene = "";
+    public GameObject spawn;
+    public GameObject Player;
 
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        rigidBody2D = GetComponent<Rigidbody2D>();
+    void Start () {
+        rigidBody2D = GetComponent<Rigidbody2D> ();
 
     }
 
-    
-
-    // Update is called once per frame
-    void Update()
-    {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        Vector2 velocity = new Vector2(horizontalInput * playerVelocity, rigidBody2D.velocity.y);
+    void Update () {
+        float horizontalInput = Input.GetAxis ("Horizontal");
+        Vector2 velocity = new Vector2 (horizontalInput * playerVelocity, rigidBody2D.velocity.y);
         rigidBody2D.velocity = velocity;
         Vector3 scale = transform.localScale;
-        if(velocity.x > 0)
-        {
-            scale.x = -Mathf.Abs(scale.x);
-        }
-        else if(velocity.x < 0)
-        {
-            scale.x = Mathf.Abs(scale.x);
+        if (velocity.x > 0) {
+            scale.x = -Mathf.Abs (scale.x);
+        } else if (velocity.x < 0) {
+            scale.x = Mathf.Abs (scale.x);
         }
         transform.localScale = scale;
 
-        bool canJump = Physics2D.OverlapCircle(jumpPosition.position, raycastRadius, mask);
-        if (canJump && Input.GetButtonDown("Jump"))
-        {
-            rigidBody2D.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+        bool canJump = Physics2D.OverlapCircle (jumpPosition.position, raycastRadius, mask);
+        if (canJump && Input.GetButtonDown ("Jump")) {
+            rigidBody2D.AddForce (new Vector2 (0, jumpForce), ForceMode2D.Impulse);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Door")
-        {
-            nextScene = nextInt.ToString();
-            SceneManager.LoadScene(nextScene);
+    private void OnTriggerEnter2D (Collider2D collision) {
+        if (collision.tag == "Door") {
+            nextScene = nextInt.ToString ();
+            SceneManager.LoadScene (nextScene);
             nextInt++;
-            nextScene = nextInt.ToString();
+            nextScene = nextInt.ToString ();
         }
 
-
+        if (collision.tag == "Spike") {
+            Player =  GameObject.FindWithTag("Player");
+            spawn =  GameObject.FindWithTag("spawn"); 
+            Player.transform.position = spawn.transform.position;
+        }
     }
-
-
 }

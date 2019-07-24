@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Door
+  - Spike
+  - spawn2
+  - spawn
   layers:
   - Default
   - TransparentFX
