@@ -1,0 +1,18 @@
+- Kill Zone
+- sauter
+- figer
+- avancer
+- reculer
+- start level
+- finish level
+- level
+- slime death
+- slime freezed coldown
+- obstacle solidity
+- respawn
+- checkpoint (inter-level)
+- sound integretion
+- GUI
+	- pause menu
+	- main menu
+- ...
