@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerController : MonoBehaviour
     public float raycastRadius;
     public LayerMask mask;
     public float jumpForce = 10;
+
+    public static int nextInt = 2;
+    public string nextScene = "";
 
 
 
@@ -47,10 +51,20 @@ public class PlayerController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Garbage")
+        if (collision.tag == "Door")
         {
-            collision.gameObject.SetActive(false);
+            nextScene = nextInt.ToString();
+            Debug.Log(nextInt);
+            Debug.Log(nextScene);
+            SceneManager.LoadScene(nextScene);
+            nextInt++;
+            nextScene = nextInt.ToString();
+            Debug.Log(nextInt);
+            Debug.Log(nextScene);
         }
+
+
     }
+
 
 }
