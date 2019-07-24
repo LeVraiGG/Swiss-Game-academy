@@ -54,13 +54,9 @@ public class PlayerController : MonoBehaviour
         if (collision.tag == "Door")
         {
             nextScene = nextInt.ToString();
-            Debug.Log(nextInt);
-            Debug.Log(nextScene);
             SceneManager.LoadScene(nextScene);
             nextInt++;
             nextScene = nextInt.ToString();
-            Debug.Log(nextInt);
-            Debug.Log(nextScene);
         }
 
 
