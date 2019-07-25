@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
@@ -15,10 +16,12 @@ public class PlayerController : MonoBehaviour {
     public string nextScene = "";
     public GameObject spawn;
     public GameObject Player;
+    public GameObject treePrefab;
+
+    public int numLeaves;
 
     void Start () {
         rigidBody2D = GetComponent<Rigidbody2D> ();
-
     }
 
     void Update () {
@@ -37,6 +40,15 @@ public class PlayerController : MonoBehaviour {
         if (canJump && Input.GetButtonDown ("Jump")) {
             rigidBody2D.AddForce (new Vector2 (0, jumpForce), ForceMode2D.Impulse);
         }
+
+  /*       if (Input.GetButton ("Bouton B")) {
+            var deadSlime = GameObject.FindWithTag ("deadSlime");
+            Player = GameObject.FindWithTag ("Player");
+            spawn = GameObject.FindWithTag ("spawn");
+
+            Instantiate (deadSlime, Player.transform.position, Quaternion.identity);
+            Player.transform.position = spawn.transform.position;
+        }*/
     }
     private void OnTriggerEnter2D (Collider2D collision) {
         if (collision.tag == "Door") {
@@ -47,8 +59,9 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (collision.tag == "Spike") {
-            Player =  GameObject.FindWithTag("Player");
-            spawn =  GameObject.FindWithTag("spawn"); 
+            Player = GameObject.FindWithTag ("Player");
+            spawn = GameObject.FindWithTag ("spawn");
+
             Player.transform.position = spawn.transform.position;
         }
     }

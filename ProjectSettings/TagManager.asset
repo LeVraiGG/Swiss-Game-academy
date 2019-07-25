@@ -8,6 +8,7 @@ TagManager:
   - Spike
   - spawn2
   - spawn
+  - deadSlime
   layers:
   - Default
   - TransparentFX
