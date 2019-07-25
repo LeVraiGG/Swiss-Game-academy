@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3415690569564868630}
   - component: {fileID: 3415690569564868625}
   - component: {fileID: 3415690569564868624}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeadSlime
   m_TagString: deadSlime
   m_Icon: {fileID: 0}
