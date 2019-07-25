@@ -26,8 +26,16 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
         float horizontalInput = Input.GetAxis ("Horizontal");
+        bool canJump = Physics2D.OverlapCircle(jumpPosition.position, raycastRadius, mask);
+
         Vector2 velocity = new Vector2 (horizontalInput * playerVelocity, rigidBody2D.velocity.y);
+        if (!canJump)
+        {
+            Debug.Log("IN AIR");
+            velocity.x = velocity.x / Mathf.Sqrt(2);
+        }
         rigidBody2D.velocity = velocity;
+
         Vector3 scale = transform.localScale;
         if (velocity.x > 0) {
             scale.x = -Mathf.Abs (scale.x);
@@ -36,7 +44,7 @@ public class PlayerController : MonoBehaviour {
         }
         transform.localScale = scale;
 
-        bool canJump = Physics2D.OverlapCircle (jumpPosition.position, raycastRadius, mask);
+        
         if (canJump && Input.GetButtonDown ("Jump")) {
             rigidBody2D.AddForce (new Vector2 (0, jumpForce), ForceMode2D.Impulse);
         }
