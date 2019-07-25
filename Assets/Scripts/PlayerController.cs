@@ -17,11 +17,16 @@ public class PlayerController : MonoBehaviour {
     public GameObject spawn;
     public GameObject Player;
     public GameObject treePrefab;
+    public bool isWait = false;
+    public float timerWait = 1;
+    public Vector3 positionDeath;
 
     public int numLeaves;
 
     void Start () {
         rigidBody2D = GetComponent<Rigidbody2D> ();
+        spawn = GameObject.FindWithTag ("spawn");
+        Player = GameObject.FindWithTag ("Player");
     }
 
     void Update () {
@@ -41,14 +46,24 @@ public class PlayerController : MonoBehaviour {
             rigidBody2D.AddForce (new Vector2 (0, jumpForce), ForceMode2D.Impulse);
         }
 
-  /*       if (Input.GetButton ("Bouton B")) {
+        if (Input.GetButtonDown ("Fire2")) {
             var deadSlime = GameObject.FindWithTag ("deadSlime");
             Player = GameObject.FindWithTag ("Player");
             spawn = GameObject.FindWithTag ("spawn");
 
             Instantiate (deadSlime, Player.transform.position, Quaternion.identity);
             Player.transform.position = spawn.transform.position;
-        }*/
+        }
+
+        if (isWait) {
+            timerWait -= Time.deltaTime;
+            Player.transform.position = positionDeath;
+            if (timerWait <= 0) {
+                isWait = false;
+                Player.transform.position = spawn.transform.position;
+                timerWait = 1;
+            }
+        }
     }
     private void OnTriggerEnter2D (Collider2D collision) {
         if (collision.tag == "Door") {
@@ -59,10 +74,8 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (collision.tag == "Spike") {
-            Player = GameObject.FindWithTag ("Player");
-            spawn = GameObject.FindWithTag ("spawn");
-
-            Player.transform.position = spawn.transform.position;
+            isWait = true;
+            positionDeath = Player.transform.position;
         }
     }
 }
