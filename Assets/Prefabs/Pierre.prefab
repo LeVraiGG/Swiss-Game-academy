@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7307400953885214204}
   - component: {fileID: 6135841155682438167}
   - component: {fileID: 1097647626570962573}
+  - component: {fileID: 7075693700762564764}
+  - component: {fileID: -1245894208826193238}
   m_Layer: 0
   m_Name: Pierre
   m_TagString: Spike
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7306800002271836222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.675, y: -2.725, z: -6.8357496}
-  m_LocalScale: {x: 0.737, y: 0.531, z: 1}
+  m_LocalScale: {x: 0.78, y: 0.58, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -106,3 +108,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.9426734, y: 2.5773935}
   m_EdgeRadius: 0
+--- !u!114 &7075693700762564764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306800002271836222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78289c300070ab94d8b01e48d782b90f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileVelocity: 10
+--- !u!50 &-1245894208826193238
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7306800002271836222}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4

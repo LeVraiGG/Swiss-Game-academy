@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (Input.GetButtonDown ("Fire2")) {
-            var deadSlime = GameObject.FindWithTag ("deadSlime");
+            GameObject deadSlime = GameObject.FindWithTag ("deadSlime");
             Player = GameObject.FindWithTag ("Player");
             spawn = GameObject.FindWithTag ("spawn");
 

@@ -9,6 +9,7 @@ TagManager:
   - spawn2
   - spawn
   - deadSlime
+  - spawnBullet
   layers:
   - Default
   - TransparentFX
