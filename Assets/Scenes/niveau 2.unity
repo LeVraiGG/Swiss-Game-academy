@@ -3453,6 +3453,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9eacb3b7b19340488d45a2388439fed, type: 3}
+--- !u!1 &542124065 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 288301124029340783, guid: ef14f831212a2cf4aa62ea0ff2c579f4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1630997176}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &571070440
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4649,7 +4655,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnBullet
       value: 
-      objectReference: {fileID: 1312572832}
+      objectReference: {fileID: 542124065}
     - target: {fileID: 382953543513301215, guid: ce2622e90387f424d9764c841476978c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7753,12 +7759,6 @@ PrefabInstance:
       objectReference: {fileID: 1686909224}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cca96ed929d576846b779c75ed715aa6, type: 3}
---- !u!1 &1312572832 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 387146462628666653, guid: ce2622e90387f424d9764c841476978c,
-    type: 3}
-  m_PrefabInstance: {fileID: 787687744}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1326316545
 PrefabInstance:
   m_ObjectHideFlags: 0
