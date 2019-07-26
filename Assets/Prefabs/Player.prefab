@@ -76,7 +76,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69bc227263fba7a4c8769800c6a84953, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerVelocity: 25
+  playerVelocity: 15
   jumpPosition: {fileID: 8994782611020915115}
   raycastRadius: 0.4
   mask:
@@ -113,6 +113,8 @@ MonoBehaviour:
   positionDeath: {x: 0, y: 0, z: 0}
   nbBloc: 3
   nbBlocCrakled: 3
+  textVar1: {fileID: 0}
+  textVar2: {fileID: 0}
   numLeaves: 0
 --- !u!1 &8994782610920069748
 GameObject:
