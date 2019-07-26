@@ -18,7 +18,6 @@ public class Taupe : MonoBehaviour {
 
     void FixedUpdate () {
         i++;
-        Debug.Log (i);
         if (i == 50) {
             i = 0;
             GameObject s = Instantiate (bullet, spawnBullet.transform.position, Quaternion.identity);
