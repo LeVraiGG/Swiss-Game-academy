@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rigidBody2D;
@@ -24,6 +25,8 @@ public class PlayerController : MonoBehaviour {
     public int nbBloc = 3;
     public int nbBlocCrakled = 3;
     private bool crakledIsSelected;
+    public Text textVar1;
+    public Text textVar2;
 
     public int numLeaves;
 
@@ -34,6 +37,9 @@ public class PlayerController : MonoBehaviour {
     }
 
     void Update () {
+        textVar1.text = (" " + nbBloc.ToString () + " ");
+        textVar2.text = (" " + nbBlocCrakled.ToString () + " ");
+
         float horizontalInput = Input.GetAxis ("Horizontal");
         bool canJump = Physics2D.OverlapCircle (jumpPosition.position, raycastRadius, mask);
 
@@ -80,7 +86,7 @@ public class PlayerController : MonoBehaviour {
             Player.transform.position = positionDeath;
             if (timerWait <= 0) {
                 isWait = false;
-                rigidBody2D.velocity = new Vector2();
+                rigidBody2D.velocity = new Vector2 ();
                 Player.transform.position = spawn.transform.position;
                 timerWait = 1;
             }
@@ -114,7 +120,7 @@ public class PlayerController : MonoBehaviour {
     }
     void OnCollisionEnter2D (Collision2D col) {
         if (col.gameObject.tag == "deadSlimeCrakled") {
-            Destroy (col.gameObject,3);
+            Destroy (col.gameObject, 3);
         }
     }
 }
