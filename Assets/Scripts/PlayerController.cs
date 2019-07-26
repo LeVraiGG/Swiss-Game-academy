@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour {
             Player.transform.position = positionDeath;
             if (timerWait <= 0) {
                 isWait = false;
+                rigidBody2D.velocity = new Vector2();
                 Player.transform.position = spawn.transform.position;
                 timerWait = 1;
             }
