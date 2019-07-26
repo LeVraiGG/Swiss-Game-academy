@@ -19,10 +19,4 @@ public class Projectile : MonoBehaviour {
     private void OnTriggerEnter2D (Collider2D collision) {
         Destroy (gameObject);
     }
-    // }
-
-    void OnCollisionEnter (Collision collision) {
-        //Destroy this gameobject
-        Destroy (gameObject);
-    }
 }

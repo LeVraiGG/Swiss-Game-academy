@@ -104,10 +104,15 @@ MonoBehaviour:
   nextScene: 
   spawn: {fileID: 0}
   Player: {fileID: 0}
-  treePrefab: {fileID: 0}
+  deadSlime: {fileID: 3415690569564868627, guid: 6effa7af45e10d148a9853d0cd02cd7d,
+    type: 3}
+  deadSlimeCrakled: {fileID: 4900020506861808520, guid: 12ca600037b9c3946b9ef9d2a494d074,
+    type: 3}
   isWait: 0
   timerWait: 1
   positionDeath: {x: 0, y: 0, z: 0}
+  nbBloc: 3
+  nbBlocCrakled: 3
   numLeaves: 0
 --- !u!1 &8994782610920069748
 GameObject:
