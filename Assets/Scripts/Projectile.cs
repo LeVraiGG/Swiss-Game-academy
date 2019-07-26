@@ -19,4 +19,9 @@ public class Projectile : MonoBehaviour {
     private void OnTriggerEnter2D (Collider2D collision) {
         Destroy (gameObject);
     }
+        void OnCollisionEnter2D (Collision2D col) {
+        if (col.gameObject.tag == "deadSlimeCrakled") {
+            Destroy (col.gameObject,3);
+        }
+    }
 }
