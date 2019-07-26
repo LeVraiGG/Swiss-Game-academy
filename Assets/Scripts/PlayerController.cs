@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour {
     public Transform jumpPosition;
     public float raycastRadius;
     public LayerMask mask;
-    public float jumpForce = 10;
 
     public static int nextInt = 2;
     public string nextScene = "";
@@ -26,13 +25,16 @@ public class PlayerController : MonoBehaviour {
     private bool crakledIsSelected;
     public Text textVar1;
     public Text textVar2;
+    public bool canPlay = true;
 
     public int numLeaves;
+    public Animator animator;
 
     void Start () {
         rigidBody2D = GetComponent<Rigidbody2D> ();
         spawn = GameObject.FindWithTag ("spawn");
-        Player = GameObject.FindWithTag ("Player");
+        Player = GameObject.FindWithTag("Player");
+
     }
 
     void Update () {
@@ -48,25 +50,37 @@ public class PlayerController : MonoBehaviour {
             textVar2.color = Color.red;
         }
 
-        if (!isWait) {
-            float horizontalInput = Input.GetAxis ("Horizontal");
-            bool canJump = Physics2D.OverlapCircle (jumpPosition.position, raycastRadius, mask);
-            Vector2 velocity = new Vector2 (horizontalInput * playerVelocity, rigidBody2D.velocity.y);
+        if (!isWait && canPlay) {
+            float horizontalInput = Input.GetAxis("Horizontal");
+            bool canJump = Physics2D.OverlapCircle(jumpPosition.position, raycastRadius, mask);
+           
+            Vector2 velocity = new Vector2(horizontalInput * playerVelocity, rigidBody2D.velocity.y);
             if (!canJump) {
-                velocity.x = velocity.x / Mathf.Sqrt (2);
+                velocity.x = velocity.x / Mathf.Sqrt(2);
             }
             rigidBody2D.velocity = velocity;
 
+            animator.SetFloat("velocityY", velocity.y);
+
+            if (velocity.x != 0) 
+            {
+                animator.SetBool("isMoving", true);
+            }
+            else
+            {
+                animator.SetBool("isMoving", false);
+            }
+
             Vector3 scale = transform.localScale;
             if (velocity.x > 0) {
-                scale.x = -Mathf.Abs (scale.x);
-            } else if (velocity.x < 0) {
                 scale.x = Mathf.Abs (scale.x);
+            } else if (velocity.x < 0) {
+                scale.x = -Mathf.Abs (scale.x);
             }
             transform.localScale = scale;
 
             if (canJump && Input.GetButtonDown ("Jump")) {
-                rigidBody2D.AddForce (new Vector2 (0, jumpForce), ForceMode2D.Impulse);
+                animator.SetTrigger("isJumping");
             }
 
             if (Input.GetButtonDown ("Fire2")) {
@@ -99,7 +113,7 @@ public class PlayerController : MonoBehaviour {
                 Player.transform.position = spawn.transform.position;
                 isWait = false;
                 rigidBody2D.gravityScale = 5;
-                timerWait = 1;
+                timerWait = 1f;
             }
         }
         if (Input.GetButtonDown ("Fire3") && !isWait) {
@@ -126,6 +140,10 @@ public class PlayerController : MonoBehaviour {
 
         if (collision.tag == "Spike") {
             isWait = true;
+            canPlay = false;
+            animator.SetTrigger("Death");
+            animator.SetFloat("velocityY", 0);
+            animator.SetBool("isMoving", false);
         }
     }
     void OnCollisionEnter2D (Collision2D col) {
@@ -133,4 +151,6 @@ public class PlayerController : MonoBehaviour {
             Destroy (col.gameObject, 3);
         }
     }
+
+
 }
