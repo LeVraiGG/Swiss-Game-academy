@@ -16,10 +16,14 @@ public class PlayerController : MonoBehaviour {
     public string nextScene = "";
     public GameObject spawn;
     public GameObject Player;
-    public GameObject treePrefab;
+    public GameObject deadSlime;
+    public GameObject deadSlimeCrakled;
     public bool isWait = false;
     public float timerWait = 1;
     public Vector3 positionDeath;
+    public int nbBloc = 3;
+    public int nbBlocCrakled = 3;
+    private bool crakledIsSelected;
 
     public int numLeaves;
 
@@ -53,14 +57,24 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (Input.GetButtonDown ("Fire2")) {
-            GameObject deadSlime = GameObject.FindWithTag ("deadSlime");
             Player = GameObject.FindWithTag ("Player");
             spawn = GameObject.FindWithTag ("spawn");
 
-            Instantiate (deadSlime, Player.transform.position, Quaternion.identity);
-            Player.transform.position = spawn.transform.position;
+            if (crakledIsSelected) {
+                if (nbBlocCrakled > 0) {
+                    Instantiate (deadSlimeCrakled, Player.transform.position, Quaternion.identity);
+                    Player.transform.position = spawn.transform.position;
+                    nbBlocCrakled--;
+                }
+            } else if (nbBloc > 0) {
+                Instantiate (deadSlime, Player.transform.position, Quaternion.identity);
+                Player.transform.position = spawn.transform.position;
+                nbBloc--;
+            }
         }
-
+        if (Input.GetButtonDown ("Submit")) {
+            crakledIsSelected = !crakledIsSelected;
+        }
         if (isWait) {
             timerWait -= Time.deltaTime;
             Player.transform.position = positionDeath;
