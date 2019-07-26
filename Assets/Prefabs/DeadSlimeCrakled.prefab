@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 281468058130217961}
   m_Layer: 8
   m_Name: DeadSlimeCrakled
-  m_TagString: deadSlime
+  m_TagString: deadSlimeCrakled
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c55d557a8693ac74eac9c685c9e180d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWait: 0
-  timerWait: 3
+  time: 3
 --- !u!212 &6662173479375066594
 SpriteRenderer:
   m_ObjectHideFlags: 0

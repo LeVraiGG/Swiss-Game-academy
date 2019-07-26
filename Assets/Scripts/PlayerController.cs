@@ -111,4 +111,11 @@ public class PlayerController : MonoBehaviour {
             positionDeath = Player.transform.position;
         }
     }
+    void OnCollisionEnter (Collision col) {
+        Debug.Log ("Collisioned => Destroying item...");
+        if (col.gameObject.tag == "deadSlimeCrakled") {
+            Destroy (col.gameObject);
+            Debug.Log ("destroyed");
+        }
+    }
 }
