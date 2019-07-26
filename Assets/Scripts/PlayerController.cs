@@ -39,6 +39,14 @@ public class PlayerController : MonoBehaviour {
     void Update () {
         textVar1.text = (" " + nbBloc.ToString () + " ");
         textVar2.text = (" " + nbBlocCrakled.ToString () + " ");
+        if(!crakledIsSelected){
+            textVar1.color = Color.red;
+            textVar2.color = Color.white;
+        }
+        if(crakledIsSelected){
+            textVar1.color = Color.white;
+            textVar2.color = Color.red;
+        }
 
         float horizontalInput = Input.GetAxis ("Horizontal");
         bool canJump = Physics2D.OverlapCircle (jumpPosition.position, raycastRadius, mask);
