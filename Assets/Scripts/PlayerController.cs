@@ -84,6 +84,19 @@ public class PlayerController : MonoBehaviour {
                 timerWait = 1;
             }
         }
+        if (Input.GetButtonDown ("Fire3")) {
+            Player = GameObject.FindWithTag ("Player");
+            spawn = GameObject.FindWithTag ("spawn");
+
+            Player.transform.position = spawn.transform.position;
+        }
+        if (Input.GetButtonDown ("Cancel")) {
+            nextInt--;
+            nextScene = nextInt.ToString ();
+            SceneManager.LoadScene (nextScene);
+            nextInt++;
+            nextScene = nextInt.ToString ();
+        }
     }
     private void OnTriggerEnter2D (Collider2D collision) {
         if (collision.tag == "Door") {
