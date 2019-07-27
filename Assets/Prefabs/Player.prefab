@@ -100,7 +100,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 256
-  nextScene: 
+  nextScene: niveau 2
   spawn: {fileID: 0}
   Player: {fileID: 0}
   deadSlime: {fileID: 3415690569564868627, guid: 6effa7af45e10d148a9853d0cd02cd7d,
