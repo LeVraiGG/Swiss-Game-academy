@@ -2911,6 +2911,16 @@ PrefabInstance:
       propertyPath: nextScene
       value: level 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8994782610871156037, guid: cca96ed929d576846b779c75ed715aa6,
+        type: 3}
+      propertyPath: nbBloc
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8994782610871156037, guid: cca96ed929d576846b779c75ed715aa6,
+        type: 3}
+      propertyPath: nbBlocCrakled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1866962636, guid: cca96ed929d576846b779c75ed715aa6, type: 3}
       propertyPath: spawn
       value: 
