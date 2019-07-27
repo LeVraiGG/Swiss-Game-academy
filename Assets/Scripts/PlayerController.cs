@@ -17,14 +17,14 @@ public class PlayerController : MonoBehaviour {
     public GameObject spawn;
     public GameObject Player;
     public GameObject deadSlime;
-    public GameObject deadSlimeCrakled;
+    //public GameObject deadSlimeCrakled;
     public bool isWait = false;
     public float timerWait = 1;
     public int nbBloc = 3;
     public int nbBlocCrakled = 3;
     private bool crakledIsSelected;
     public Text textVar1;
-    public Text textVar2;
+    //public Text textVar2;
     public bool canPlay = true;
 
     public int numLeaves;
@@ -39,16 +39,15 @@ public class PlayerController : MonoBehaviour {
 
     void Update () {
         textVar1.text = (" " + nbBloc.ToString () + " ");
-        textVar2.text = (" " + nbBlocCrakled.ToString () + " ");
 
         if (!crakledIsSelected) {
-            textVar1.color = Color.red;
-            textVar2.color = Color.white;
-        }
-        if (crakledIsSelected) {
             textVar1.color = Color.white;
-            textVar2.color = Color.red;
+           // textVar2.color = Color.white;
         }
+        //if (crakledIsSelected) {
+            textVar1.color = Color.white;
+            //textVar2.color = Color.red;
+        //}
 
         if (!isWait && canPlay) {
             float horizontalInput = Input.GetAxis("Horizontal");
@@ -84,25 +83,28 @@ public class PlayerController : MonoBehaviour {
             }
 
             if (Input.GetButtonDown ("Fire2")) {
+              
                 Player = GameObject.FindWithTag ("Player");
                 spawn = GameObject.FindWithTag ("spawn");
 
-                if (crakledIsSelected) {
-                    if (nbBlocCrakled > 0) {
-                        Instantiate (deadSlimeCrakled, Player.transform.position, Quaternion.identity);
-                        Player.transform.position = spawn.transform.position;
-                        nbBlocCrakled--;
+               // if (crakledIsSelected) {
+                    //if (nbBlocCrakled > 0) {
+                       // animator.SetTrigger("Freeze");
+                        //Instantiate (deadSlimeCrakled, Player.transform.position, Quaternion.identity);
+
+                       // nbBlocCrakled--;
+                    // }
+                    if (nbBloc > 0)
+                    {
+                        animator.SetTrigger("Freeze");
+                        Instantiate(deadSlime, Player.transform.position, Quaternion.identity);
+                        nbBloc--;
                     }
-                } else if (nbBloc > 0) {
-                    Instantiate (deadSlime, Player.transform.position, Quaternion.identity);
-                    Player.transform.position = spawn.transform.position;
-                    nbBloc--;
-                }
             }
         }
-        if (Input.GetButtonDown ("Submit")) {
+        //if (Input.GetButtonDown ("Submit")) {
             crakledIsSelected = !crakledIsSelected;
-        }
+        //}
         if (isWait) {
             rigidBody2D.gravityScale = 0;
             timerWait -= Time.deltaTime;
@@ -130,7 +132,7 @@ public class PlayerController : MonoBehaviour {
             nextScene = nextInt.ToString ();
         }
     }
-    private void OnTriggerEnter2D (Collider2D collision) {
+    void OnTriggerEnter2D (Collider2D collision) {
         if (collision.tag == "Door") {
             nextScene = nextInt.ToString ();
             SceneManager.LoadScene (nextScene);
@@ -146,8 +148,10 @@ public class PlayerController : MonoBehaviour {
             animator.SetBool("isMoving", false);
         }
     }
+
     void OnCollisionEnter2D (Collision2D col) {
-        if (col.gameObject.tag == "deadSlimeCrakled") {
+   
+            if (col.gameObject.tag == "deadSlimeCrakled") {
             Destroy (col.gameObject, 3);
         }
     }

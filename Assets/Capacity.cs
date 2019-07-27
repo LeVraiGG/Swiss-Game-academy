@@ -7,17 +7,7 @@ public class Capacity : MonoBehaviour
     public float jumpForce;
     [SerializeField] Rigidbody2D rigid;
     [SerializeField] PlayerController controller;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public GameObject spawn;
 
     public void Jump()
     {
@@ -28,4 +18,25 @@ public class Capacity : MonoBehaviour
     {
         controller.canPlay = true;
     }
+
+    public void Respawn()
+    {
+        controller.gameObject.transform.position = spawn.transform.position;
+    }
+
+
+
+    public void Freeze()
+    {
+        rigid.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
+
+    public void DeFreeze()
+    {
+        rigid.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+    }
+
+
+
+
 }

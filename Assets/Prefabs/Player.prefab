@@ -105,14 +105,11 @@ MonoBehaviour:
   Player: {fileID: 0}
   deadSlime: {fileID: 3415690569564868627, guid: 6effa7af45e10d148a9853d0cd02cd7d,
     type: 3}
-  deadSlimeCrakled: {fileID: 4900020506861808520, guid: 12ca600037b9c3946b9ef9d2a494d074,
-    type: 3}
   isWait: 0
   timerWait: 1
   nbBloc: 3
   nbBlocCrakled: 3
   textVar1: {fileID: 0}
-  textVar2: {fileID: 0}
   canPlay: 1
   numLeaves: 0
   animator: {fileID: 1866962635}
@@ -185,13 +182,13 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.1}
+  m_Size: {x: 0.08, y: 0.08}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -231,6 +228,7 @@ MonoBehaviour:
   jumpForce: 20
   rigid: {fileID: 8994782610871156038}
   controller: {fileID: 8994782610871156037}
+  spawn: {fileID: 0}
 --- !u!1 &8994782611020915114
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,10 +96,10 @@ TextureImporter:
       name: SlimeFreeze_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 16
-        height: 10
+        x: 4
+        y: 11
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -107,7 +107,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 210cf6cc7666b45d59208bafa51a7d68
+      spriteID: 2820ad1b34ce34ea4bdb49cb136850f4
       internalID: -8883015839540416746
       vertices: []
       indices: 
@@ -117,10 +117,10 @@ TextureImporter:
       name: SlimeFreeze_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 10
-        width: 16
-        height: 10
+        x: 20
+        y: 11
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,7 +128,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dcad0e57ffe424fa093fdc0e81ebeebf
+      spriteID: b1efd65fc23de4e6db13b59c1fa04c8c
       internalID: -1322820180248250052
       vertices: []
       indices: 
@@ -138,10 +138,10 @@ TextureImporter:
       name: SlimeFreeze_2
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 10
+        x: 4
+        y: 1
+        width: 8
+        height: 8
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,7 +149,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c593be9a26b541cb93005f6de05c41c
+      spriteID: 4144fb5985dbf47fa9ac28b67022e6c6
       internalID: 26684063881008038
       vertices: []
       indices: 
