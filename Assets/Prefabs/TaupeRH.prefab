@@ -96,7 +96,11 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
+<<<<<<< HEAD:Assets/Prefabs/TaupeRH.prefab
   m_Offset: {x: 0.0009701699, y: -0.0013010483}
+=======
+  m_Offset: {x: 0.00018949062, y: -0.0013295002}
+>>>>>>> master:Assets/Prefabs/Taupe.prefab
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,7 +111,11 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
+<<<<<<< HEAD:Assets/Prefabs/TaupeRH.prefab
   m_Size: {x: 0.05184482, y: 0.09273276}
+=======
+  m_Size: {x: 0.106897, y: 0.10891678}
+>>>>>>> master:Assets/Prefabs/Taupe.prefab
   m_EdgeRadius: 0
 --- !u!114 &-2473933274363082151
 MonoBehaviour:
@@ -121,9 +129,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaedb28939a8514b81dea8fde8a46d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD:Assets/Prefabs/TaupeRH.prefab
   bullet: {fileID: 7665772735349940473, guid: f065d8bdd728bd647856f019ac98e442, type: 3}
   spawnBullet: {fileID: 288301124029340783, guid: ef14f831212a2cf4aa62ea0ff2c579f4,
     type: 3}
+=======
+  bullet: {fileID: 3534737061831260024, guid: 22fc1dad2674b1b458a641f137d77463, type: 3}
+  spawnBullet: {fileID: 0}
+>>>>>>> master:Assets/Prefabs/Taupe.prefab
 --- !u!50 &1048262956712292233
 Rigidbody2D:
   serializedVersion: 4
