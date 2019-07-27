@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public Transform jumpPosition;
     public float raycastRadius;
     public LayerMask mask;
+    bool canJump;
 
     public static int nextInt = 2;
     public string nextScene = "";
@@ -29,8 +30,14 @@ public class PlayerController : MonoBehaviour {
 
     public int numLeaves;
     public Animator animator;
-
+    private AudioSource audiosource;
+    public AudioClip clipmarcher;
+    public AudioClip clipsauter;
+    public AudioClip clipatterire;
+    public AudioClip clipmort;
+    public AudioClip clipfreeze;
     void Start () {
+        audiosource=GetComponent<AudioSource>();
         rigidBody2D = GetComponent<Rigidbody2D> ();
         spawn = GameObject.FindWithTag ("spawn");
         Player = GameObject.FindWithTag("Player");
@@ -51,7 +58,14 @@ public class PlayerController : MonoBehaviour {
 
         if (!isWait && canPlay) {
             float horizontalInput = Input.GetAxis("Horizontal");
-            bool canJump = Physics2D.OverlapCircle(jumpPosition.position, raycastRadius, mask);
+            bool nowCanJump = Physics2D.OverlapCircle(jumpPosition.position, raycastRadius, mask);
+
+            if(nowCanJump && !canJump)
+            {
+                audiosource.clip = clipatterire;
+                audiosource.Play();
+            }
+            canJump = nowCanJump;
            
             Vector2 velocity = new Vector2(horizontalInput * playerVelocity, rigidBody2D.velocity.y);
             if (!canJump) {
@@ -64,12 +78,20 @@ public class PlayerController : MonoBehaviour {
             if (velocity.x != 0) 
             {
                 animator.SetBool("isMoving", true);
+                if(!audiosource.isPlaying)
+                {
+                    audiosource.clip = clipmarcher;
+                    audiosource.Play();
+                }
             }
             else
             {
                 animator.SetBool("isMoving", false);
+                if(audiosource.clip==clipmarcher)
+                {
+                    audiosource.Stop();
+                }
             }
-
             Vector3 scale = transform.localScale;
             if (velocity.x > 0) {
                 scale.x = Mathf.Abs (scale.x);
@@ -80,6 +102,8 @@ public class PlayerController : MonoBehaviour {
 
             if (canJump && Input.GetButtonDown ("Jump")) {
                 animator.SetTrigger("isJumping");
+                audiosource.clip = clipsauter;
+                audiosource.Play();
             }
 
             if (Input.GetButtonDown ("Fire2")) {
@@ -99,23 +123,26 @@ public class PlayerController : MonoBehaviour {
                         animator.SetTrigger("Freeze");
                         Instantiate(deadSlime, Player.transform.position, Quaternion.identity);
                         nbBloc--;
-                    }
+                    audiosource.clip = clipfreeze;
+                    audiosource.Play();
+                }
             }
         }
+
         //if (Input.GetButtonDown ("Submit")) {
-            crakledIsSelected = !crakledIsSelected;
+         //   crakledIsSelected = !crakledIsSelected;
         //}
         if (isWait) {
             rigidBody2D.gravityScale = 0;
+            rigidBody2D.velocity = new Vector2();
             timerWait -= Time.deltaTime;
-            rigidBody2D.velocity = new Vector2 ();
             if (timerWait <= 0) {
                 rigidBody2D.velocity = new Vector2 ();
                 rigidBody2D.gravityScale = 0;
                 Player.transform.position = spawn.transform.position;
                 isWait = false;
                 rigidBody2D.gravityScale = 5;
-                timerWait = 1f;
+                timerWait = 1;
             }
         }
         if (Input.GetButtonDown ("Fire3") && !isWait) {
@@ -144,7 +171,9 @@ public class PlayerController : MonoBehaviour {
             isWait = true;
             canPlay = false;
             animator.SetTrigger("Death");
-            animator.SetFloat("velocityY", 0);
+                audiosource.clip = clipmort;
+                audiosource.Play();
+                animator.SetFloat("velocityY", 0);
             animator.SetBool("isMoving", false);
         }
     }
@@ -156,5 +185,4 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-
-}
+ }
