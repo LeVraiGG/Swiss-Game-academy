@@ -5,6 +5,7 @@ using UnityEngine;
 public class Taupe : MonoBehaviour {
     public GameObject bullet;
     private int i = 0;
+    public int cadence = 50;
     public GameObject spawnBullet;
     public AudioClip cliplancer;
     private AudioSource audiosource;
