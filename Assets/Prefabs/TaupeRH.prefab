@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: -2473933274363082151}
   - component: {fileID: 1048262956712292233}
   - component: {fileID: -1268840786006261170}
+  - component: {fileID: 7457899021978303437}
   m_Layer: 0
-  m_Name: Taupe
+  m_Name: TaupeRH
   m_TagString: Spike
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_GameObject: {fileID: 387146462628666653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0824, y: -2.8399, z: -6.8357496}
-  m_LocalScale: {x: 0.48429576, y: 0.52298623, z: 1}
+  m_LocalScale: {x: -14.8, y: 14.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00454545, y: -0.005907178}
+  m_Offset: {x: 0.0009701699, y: -0.0013010483}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 3.7542496, y: 5.1885977}
+  m_Size: {x: 0.05184482, y: 0.09273276}
   m_EdgeRadius: 0
 --- !u!114 &-2473933274363082151
 MonoBehaviour:
@@ -121,8 +122,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaedb28939a8514b81dea8fde8a46d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5442594194657463934, guid: 7893010022de5e74c8ef13e7a02a0582, type: 3}
-  spawnBullet: {fileID: 0}
+  bullet: {fileID: 7665772735349940473, guid: f065d8bdd728bd647856f019ac98e442, type: 3}
+  spawnBullet: {fileID: 288301124029340783, guid: ef14f831212a2cf4aa62ea0ff2c579f4,
+    type: 3}
 --- !u!50 &1048262956712292233
 Rigidbody2D:
   serializedVersion: 4
@@ -157,4 +159,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 0}
-  spawnBullet: {fileID: 0}
+  spawnBullet: {fileID: 288301124029340783, guid: ef14f831212a2cf4aa62ea0ff2c579f4,
+    type: 3}
+--- !u!95 &7457899021978303437
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387146462628666653}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 452419a462dbd46d1b00e22795b931a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
