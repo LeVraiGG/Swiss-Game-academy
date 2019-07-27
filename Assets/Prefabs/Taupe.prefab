@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 387146462628666653}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.0824, y: -2.8399, z: -6.8357496}
-  m_LocalScale: {x: 0.48429576, y: 0.52298623, z: 1}
+  m_LocalScale: {x: 14.8, y: 14.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -96,7 +96,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.00454545, y: -0.005907178}
+  m_Offset: {x: 0.00018949062, y: -0.0013295002}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 1
   serializedVersion: 2
-  m_Size: {x: 3.7542496, y: 5.1885977}
+  m_Size: {x: 0.106897, y: 0.10891678}
   m_EdgeRadius: 0
 --- !u!114 &-2473933274363082151
 MonoBehaviour:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaaedb28939a8514b81dea8fde8a46d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 5442594194657463934, guid: 7893010022de5e74c8ef13e7a02a0582, type: 3}
+  bullet: {fileID: 3534737061831260024, guid: 22fc1dad2674b1b458a641f137d77463, type: 3}
   spawnBullet: {fileID: 0}
 --- !u!50 &1048262956712292233
 Rigidbody2D:
