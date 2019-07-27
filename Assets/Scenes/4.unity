@@ -755,7 +755,11 @@ PrefabInstance:
     - target: {fileID: 382953543513301215, guid: ce2622e90387f424d9764c841476978c,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD:Assets/Scenes/4.unity
+      value: 7.07
+=======
       value: 7.18
+>>>>>>> master:Assets/Scenes/niveau 3.unity
       objectReference: {fileID: 0}
     - target: {fileID: 382953543513301215, guid: ce2622e90387f424d9764c841476978c,
         type: 3}
@@ -4206,7 +4210,11 @@ PrefabInstance:
     - target: {fileID: 382953543513301215, guid: ce2622e90387f424d9764c841476978c,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD:Assets/Scenes/4.unity
+      value: 7.12
+=======
       value: 7.185
+>>>>>>> master:Assets/Scenes/niveau 3.unity
       objectReference: {fileID: 0}
     - target: {fileID: 382953543513301215, guid: ce2622e90387f424d9764c841476978c,
         type: 3}
@@ -6974,7 +6982,11 @@ PrefabInstance:
     - target: {fileID: 382953543513301215, guid: ce2622e90387f424d9764c841476978c,
         type: 3}
       propertyPath: m_LocalPosition.y
+<<<<<<< HEAD:Assets/Scenes/4.unity
+      value: 0.25
+=======
       value: -0.12323077
+>>>>>>> master:Assets/Scenes/niveau 3.unity
       objectReference: {fileID: 0}
     - target: {fileID: 382953543513301215, guid: ce2622e90387f424d9764c841476978c,
         type: 3}

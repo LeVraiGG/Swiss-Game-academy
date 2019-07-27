@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7999022927895573422}
   - component: {fileID: -2473933274363082151}
   - component: {fileID: 1048262956712292233}
+  - component: {fileID: -1268840786006261170}
   - component: {fileID: 2543809720331822186}
   m_Layer: 0
   m_Name: TaupeGH
@@ -145,6 +146,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &-1268840786006261170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387146462628666653}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaaedb28939a8514b81dea8fde8a46d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  spawnBullet: {fileID: 288301124029340783, guid: ef14f831212a2cf4aa62ea0ff2c579f4,
+    type: 3}
 --- !u!95 &2543809720331822186
 Animator:
   serializedVersion: 3

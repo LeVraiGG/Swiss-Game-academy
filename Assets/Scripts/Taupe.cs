@@ -6,9 +6,9 @@ public class Taupe : MonoBehaviour {
     public GameObject bullet;
     private int i = 0;
     public GameObject spawnBullet;
-    public int cadence = 50;
     private AudioSource audiosource;
     public AudioClip cliplancer;
+    public int cadence = 50;
     // Start is called before the first frame update
     void Start () {
         audiosource = GetComponent<AudioSource>();
@@ -23,10 +23,9 @@ public class Taupe : MonoBehaviour {
 
     void FixedUpdate () {
         i++;
-        if (i == cadence) {
+        if (i == 50) {
             i = 0;
             GameObject s = Instantiate (bullet, spawnBullet.transform.position, Quaternion.identity);
-
             audiosource.Play();
         }
     }
